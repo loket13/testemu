@@ -1,0 +1,244 @@
+* { 
+    box-sizing: border-box;
+    font-family: "DM Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.5;
+    border: 0;
+    outline: none;
+    border-radius: 0;
+    text-decoration: none;
+    text-transform: none;
+    margin: 0;
+    padding: 0;
+}
+:root {
+    --bb: #FFFFFF;
+    --cc: #000000;
+    --gr: #D0D4D7;
+    --ff: #00aba9;
+    --ir: #FA3246;
+    --ig: #00B478;
+}
+.dark {
+    --bb: #000000;
+    --cc: #D0D0D0;
+    --gr: #57585A;
+    --ff: #00aba9; 
+    --ir: #FA3246;
+    --ig: #00B478;
+}
+html {
+    font-size: 18px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+html::-webkit-scrollbar {
+    display: none;
+}
+h1, h2, h3, h4, h5, h6 {
+    display: block;
+    margin: 0 0 1rem 0;
+    font-weight: 500;
+}
+h1 {font-size: 2.20rem;}
+h2 {font-size: 1.70rem;}
+h3 {font-size: 1.50rem;}
+h4 {font-size: 1.20rem;}
+h5 {font-size: 1.00rem;}
+h6 {font-size: 0.80rem;}
+a, i, span, label, input, textarea, select, option, button {
+    font-size: 1rem;
+}
+a, i, span, button {
+    display: inline-block;
+    width: max-content;
+}
+a, i {
+    cursor: pointer;
+}
+a {
+    text-decoration: underline 1px var(--ff);
+}
+a:hover, i:hover {
+    color: var(--ff);
+}
+hr, label, input, textarea, select {
+    display: block;
+    width: 100%;
+}
+hr {
+    margin: 0.5rem 0;
+    border-bottom: solid 1px var(--cc);
+}
+input, textarea, select, button {
+    border: solid 1px var(--cc);
+    background-color: var(--bb);
+    color: var(--cc);
+}
+input, textarea, select {
+    margin: 0 0 1rem 0;
+    padding: 0.5rem;
+}
+button {
+    padding: 0.5rem 1.5rem;
+    cursor: pointer;
+}
+input:disabled, textarea:disabled, option:disabled, button:disabled {
+    border-color: var(--gr);
+    background-color: var(--gr);
+    color: var(--bb);
+    cursor: not-allowed;
+}
+input:focus, textarea:focus, select:hover, select:focus, button:hover {
+    outline: solid 1px var(--cc);
+}
+button:hover {
+    background-color: var(--cc);
+    color: var(--bb);
+}
+
+
+
+html, body, page-cont, .focusbox {
+    width: 100%;
+    height: 100%;
+    background-color: var(--bb);
+    color: var(--cc);
+}
+page-cont, header, nav, f-g, f-r, f-l, .focusbox {
+    display: flex;
+}
+page-cont, header, nav, f-r, f-l, .focusbox {
+    flex-wrap: nowrap;
+}
+page-cont, .focusbox {
+    flex-direction: column;
+    gap: 0;
+}
+header, nav, f-r, f-g, f-l {
+    flex-direction: row;
+    gap: 1rem;
+}
+header, nav {
+    position: sticky;
+    padding: 0.5rem 1rem;
+    border-bottom: solid 1px var(--cc);
+    background-color: var(--bb);
+    color: var(--cc);
+}
+header {
+    top: 0;
+}
+nav {
+    top: calc(3rem + 1px);
+}
+header > h3 {
+    margin-bottom: 0;
+    line-height: 2rem;
+    cursor: pointer;
+}
+header > h3:hover {
+    color: var(--ff);
+}
+header > h3, header > h4 {
+    margin: auto 0;
+}
+f-g, f-r {
+    margin: 0 0 1rem 0;
+}
+f-g {
+    flex-wrap: wrap;
+}
+f-g > *, f-r > *, f-l > * {
+    margin-bottom: 0;
+}
+f-l > button {
+    padding: 0.25rem 1rem;
+}
+main {
+    display: block;
+    width: auto;
+    min-width: 48rem;
+    max-width: 48rem;
+    margin: 0 auto;
+    padding: 1rem;
+}
+.focusbox {
+    width: auto;
+    min-width: 24rem;
+    max-width: 36rem;
+    margin: 0 auto;
+    padding: 1rem;
+}
+alert-box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    background-color: var(--bb);
+    color: var(--cc);
+}
+f-s {
+    flex: 1 1 auto;
+}
+card-box {
+    display: block;
+    width: 100%;
+    margin: 0 0 1rem 0;
+    border: solid 1px var(--cc);
+    padding: 1rem;
+}
+
+
+.btn {
+    cursor: pointer;
+}
+.btn:hover {
+    background-color: var(--gr);
+}
+.hide {
+    display: none;
+}
+.err, .err:hover, .err:focus {
+    border-color: var(--ir);
+    outline-color: var(--ir);
+}
+.mb0 {
+    margin-bottom: 0;
+}
+.posc, .posr {
+    display: block;
+    width: max-content;
+    margin-left: auto;
+}
+.posc {
+    margin-right: auto;
+}
+.posr {
+    display: block;
+    width: max-content;
+    margin-left: auto;
+    margin-right: 0;
+}
+*:last-child {
+    margin-bottom: 0;
+}
+
+@media only screen and (max-width: 1200px) {
+    html {
+        font-size: 16px;
+    }
+}
+@media only screen and (max-width: 760px) {
+    main, .focusbox {
+        width: auto;
+        min-width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+}

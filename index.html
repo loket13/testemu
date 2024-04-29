@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js" integrity="sha512-E8QSvWZ0eCLGk4km3hxSsNmGWbLtSCSUcewDQPQWZF6pEU8GlT8a5fF32wOl1i8ftdMhssTrF/OhyGWwonTcXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stellar-sdk/11.2.2/stellar-sdk.js"></script>
+    <link rel="stylesheet" href="./public/temu.css">
+    <title>Temu</title>
+</head>
+<body>
+    <page-cont id="loginPage" class="focusbox hide">
+        <f-s></f-s>
+        <card-box>
+            <h3 class="mb0">Login</h3><hr>
+            <label for="inAcc">Account</label>
+            <input type="text" id="inAcc">
+            <label for="inPas">Password</label>
+            <input type="text" id="inPas">
+            <button id="loginBtn" class="posr">Login</button>
+        </card-box>
+        <f-s></f-s>
+        <f-s></f-s>
+    </page-cont>
+
+    <page-cont id="userPage" class="hide">
+        <header>
+            <h3 id="userLogoBtn">Temu</h3>
+            <f-s></f-s>
+            <h4 id="userData"></h4>
+            <f-s></f-s>
+            <h3 id="userDarkBtn">◐</h3>
+        </header>
+        <nav>
+            <i id="userHomeBtn">[Beranda]</i>
+            <i id="userTemuBaruBtn">[Buat Janji]</i>
+            <i id="userSettingBtn">[Setting]</i>
+            <f-s></f-s>
+            <i id="userLogoutBtn">[Logout]</i>
+        </nav>
+
+        <main id="userLimited" class="hide">
+            <h4>Kuota Habis</h4>
+            <card-box class="err">Kuota janji konsultasi anda sudah habis (sisa 0 dari maksimal 5), silahkan selesaikan/batalkan janji lain terlebih dahulu untuk mendapatkan kembali kuota.</card-box>
+        </main>
+
+        <main id="userTemuBaru" class="hide">
+            <h4>Buat Janji Baru</h4>
+            <card-box>
+                <label for="selDate">Pilih Tanggal</label>
+                <input type="date" name="selDate" id="selDate" onchange="chgDate('selDate', 'selHour')">
+                <label for="selHour">Pilih Jam</label>
+                <select name="selHour" id="selHour"></select>
+                <label for="selTema">Pilih Tema</label>
+                <select name="selTema" id="selTema"></select>
+                <f-l>
+                    <button id="userTemuBatal">Batal</button>
+                    <f-s></f-s>
+                    <button id="userTemuKirim">Buat</button>
+                </f-l>
+            </card-box>
+        </main>
+
+        <main id="userHome">
+            <h4>Daftar Janji</h4>
+            <card-box id="userTemu">
+                <f-l>
+
+                </f-l>
+            </card-box>
+        </main>
+
+        <main id="userSetting" class="hide">
+            <h4>Ubah Password</h4>
+            <card-box>
+                <label for="inOld">Password Lama</label>
+                <input type="text" id="inOld">
+                <label for="inNew">Password Baru</label>
+                <input type="text" id="inNew">
+                <f-l>
+                    <button id="userBatalPas">Batal</button>
+                    <f-s></f-s>
+                    <button id="userGantiPas">Simpan</button>
+                </f-l>
+            </card-box>
+        </main>
+    </page-cont>
+
+    <page-cont id="adminPage" class="hide">
+        <header>
+            <h3 id="admLogoBtn">Temu</h3>
+            <f-s></f-s>
+            <h4 id="adminData"></h4>
+            <f-s></f-s>
+            <h3 id="admDarkBtn">◐</h3>
+        </header>
+        <nav>
+            <i id="admHomeBtn">[Beranda]</i>
+            <i id="admManUsrBtn">[Manage Users]</i>
+            <i id="admSettingBtn">[Setting]</i>
+            <f-s></f-s>
+            <i id="admLogoutBtn">[Logout]</i>
+        </nav>
+        
+        <main id="adminHome">
+            <h4>Daftar Janji</h4>
+            <card-box id="adminTemu"></card-box>
+        </main>
+
+        <main id="manageUsers" class="hide">
+            manageUsers - on development.
+        </main>
+
+        <main id="adminSetting" class="hide">
+            adminSetting - on development.
+            <h4 class="hide">Ubah Password</h4>
+            <card-box class="hide">
+                <label for="inOldAdm">Password Lama</label>
+                <input type="text" id="inOldAdm">
+                <label for="inNewAdm">Password Baru</label>
+                <input type="text" id="inNewAdm">
+                <f-l>
+                    <button id="admBatalPas">Batal</button>
+                    <f-s></f-s>
+                    <button id="admGantiPas">Simpan</button>
+                </f-l>
+            </card-box>
+        </main>
+
+    </page-cont>
+
+    <script src="./public/temu.js"></script>
+</body>
+</html>
