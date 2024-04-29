@@ -301,7 +301,7 @@ function goDark(){
     document.body.classList.toggle('dark');
 };
 function goHome(){
-    window.location.href = '/';
+    window.location.href = './';
 };
 ide('userLogoBtn').addEventListener("click", goHome);
 ide('userDarkBtn').addEventListener("click", goDark);
@@ -320,7 +320,7 @@ ide('userBatalPas').addEventListener("click", function(){
 });
 ide('userLogoutBtn').addEventListener("click", function(){
     localStorage.removeItem('temuKey');
-    window.location.href = '/';
+    window.location.href = './';
 });
 
 ide('admLogoBtn').addEventListener("click", goHome);
@@ -334,7 +334,7 @@ ide('admSettingBtn').addEventListener("click", function(){
 });
 ide('admLogoutBtn').addEventListener("click", function(){
     localStorage.removeItem('temuKey');
-    window.location.href = '/';
+    window.location.href = './';
 });
 // New Janji Function
 async function userTemuBaru(){
@@ -344,7 +344,7 @@ async function userTemuBaru(){
         let temus = await getTemu(dDb);
         if(temus === 'err'){
             //console.log('error, refreshing page');
-            window.location.href = '/';
+            window.location.href = './';
         } else {
             localStorage.setItem('temus', JSON.stringify(temus, null, ''));
             setHour('selHour');
@@ -498,10 +498,10 @@ async function usrCancel(id, src){
     ide(oBtn).setAttribute('disabled', '');
     let sts = await claimBalance(id, 'userData', 'cancel');
     if(sts === 'success'){
-        window.location.href = '/';
+        window.location.href = './';
     } else {
         alert('Gagal membatalkan janji, klik OK untuk refresh halaman dan coba kembali.');
-        window.location.href = '/';
+        window.location.href = './';
     };
 };
 async function usrFinish(id, src){
@@ -513,10 +513,10 @@ async function usrFinish(id, src){
     
     let sts = await claimBalance(id, 'userData', 'finish');
     if(sts === 'success'){
-        window.location.href = '/';
+        window.location.href = './';
     } else {
         alert('Gagal menyelesaikan janji, klik OK untuk refresh halaman dan coba kembali.');
-        window.location.href = '/';
+        window.location.href = './';
     };
 };
 
@@ -547,7 +547,7 @@ async function prepPostDta(pub, sec, dta){
     if(res.successful == true){
         //console.log('success');
         localStorage.removeItem('temuKey');
-        window.location.href = '/';
+        window.location.href = './';
         return 'success';
     } else {
         //console.log('failed');
